@@ -1,0 +1,16 @@
+program seis
+    x: int;
+    y: int;
+    sum: int;
+    w: int
+begin
+    read x;
+    read y;
+    w := 4.1;
+    if (x < y )
+        sum := (x+y);
+        print x;
+        print y
+    endif;
+    print sum
+end

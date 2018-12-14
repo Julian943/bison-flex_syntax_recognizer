@@ -1,0 +1,13 @@
+program cinco
+  x : int;
+  y : int
+begin
+  x := 4;
+  repeat
+     y := 3;
+     if(x < y)
+        x := 4
+     else
+        x := 7
+     endif
+end

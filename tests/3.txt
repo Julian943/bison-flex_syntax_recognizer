@@ -1,0 +1,13 @@
+program tres
+  x : int;
+  y : int
+begin
+  x := 3;
+  y := 4
+  if (x < y)
+    repeat
+      x := 4
+    until(x < 5)
+  endif;
+  y := x
+end

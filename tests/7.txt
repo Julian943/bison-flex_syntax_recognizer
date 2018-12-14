@@ -1,0 +1,13 @@
+program seis
+    x: int;
+    sum: float;
+    y: int;
+    w: float
+begin
+    x := 5;
+    repeat
+        print x;
+        x := (x - 1)
+    until(x < 0);
+    print x
+end

@@ -1,0 +1,12 @@
+program uno
+  x: int;
+  y: int
+begin
+  read x;
+  read y;
+  repeat
+    x := x + 1;
+    print x
+  until(x > y)
+end
+

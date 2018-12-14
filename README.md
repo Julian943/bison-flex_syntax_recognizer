@@ -1,0 +1,3 @@
+This is a syntax analyzer and interpreter using bison, flex and gcc based on a programming language defined in the document "Assigment.pdf" found in "src" folder.
+
+One you've built the project, you can define instructions using as example the "Tests" folder in order to execute commands defined in the language. If the language written is not valid, the build will fail, but if its valid, the execution of the program will begin.

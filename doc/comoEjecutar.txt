@@ -1,0 +1,16 @@
+bison -d -t ExFinal.y
+flex ExFinal.lex
+gcc lex.yy.c ExFinal.tab.c -ll
+
+a.out ../Tests/oliart_1.txt
+a.out ../Tests/oliart_2.txt
+a.out ../Tests/oliart_3.txt
+a.out ../Tests/oliart_4.txt
+a.out ../Tests/oliart_5.txt
+a.out ../Tests/oliart_6.txt
+a.out ../Tests/1.txt
+a.out ../Tests/2.txt
+a.out ../Tests/3.txt
+a.out ../Tests/4.txt
+a.out ../Tests/5.txt
+a.out ../Tests/6.txt

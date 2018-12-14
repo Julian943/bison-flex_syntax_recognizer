@@ -1,0 +1,20 @@
+program cinco
+  x : int;
+  r : int;
+  i : int
+begin
+  read x;
+  if (x < 0)
+     print x
+  else
+     r := 1;
+     i := 1;
+     while (i < x+1)
+       r := r * i;
+       i := i + 1
+     endw
+   endif;
+   print r;
+   print i
+end
+

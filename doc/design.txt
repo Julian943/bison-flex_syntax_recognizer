@@ -1,0 +1,158 @@
+
+
+//stmt:
+	struct stmt{
+		int identifier;
+		void * stmt_node;
+	};
+//	sons:
+		struct assignNode{
+			char * id;
+			void * expr;
+		};
+		struct ifNode{
+			void * expression;
+			void * opt_stms;
+		};
+		struct ifElseNde{
+			void * expression;
+			void * opt_stms1;
+			void * opt_stms2;	
+		};
+		struct repeatNode{
+			void * opt_stms;
+			void * expresion;
+		};
+		struct whileNode{
+			void * expresion;
+			void * opt_stms;
+		};
+		struct readNode{
+			char * id;
+		};
+		struct printNode{
+			void * expr;
+		};
+//opt_stms:
+	struct opt_stms{
+		void * opt_stms_node; // can be null or stmt_lst node
+	};
+
+//stmt_lst:
+	struct stmt_lst{
+		void * stmt;
+		void * stmt_lst; //can be null
+	};
+//expression:
+	struct expression{
+		int identifier;
+		void * expression_node;
+	};
+	//sons
+		struct lessThanNode{
+			void * expr1;
+			void * expr2;
+		};
+		struct moreThanNode{
+			void * expr1;
+			void * expr2;
+		};
+		struct equalsNode{
+			void * expr1;
+			void * expr2;
+		};
+//expr:
+	struct expr{
+		int identifier;
+		void * expr_node;
+	};
+	//sons
+		struct plusNode{
+			void * expr;
+			void * term;
+		};
+		struct minusNode{
+			void * expr;
+			void * term;
+		};
+		struct termNode{
+			void * term;
+		};
+//term 
+	struct term{
+		int identifier;
+		void * term_node;
+	};
+	//sons
+		struct multiplyNode{
+			void * term;
+			void * factor;
+		};
+		struct divideNode{
+			void * term;
+			void * factor;
+		};
+		struct factorNode{
+			void * term;
+			void * factor;
+		};
+//factor 
+		struct factor{
+			int identifier;
+			void * factor_node;
+		};
+		//sons
+			struct exprNode{
+				void * expr;
+			};
+			struct idNode{
+				char * id;
+			};
+			struct numIntNode{
+				int numInt;
+			};
+			struct numFloatNode{
+				double numFloat;
+			};
+
+
+
+assign retorna valor asignado
+
+									assign modifica la tabla de simbolos.
+										busca por id en la tabla de simbolos
+											si no lo encuentra, retorna excepcion de variable no encontrada
+											si la encuentra
+												checa que el tipo del simbolo sea igual al valor que tiene EXPR
+												si es así, modifica el valor del simbolo
+												si no retorna exception de tipos distintos
+
+	if evalua expr y es true, ejecuta los optstmts
+
+	ifelse evalua expresion y es true, ejecuta los optstmts y si no los otros
+
+repeat ejectua opt_stmts y luego evalua expresion
+
+
+										expr retorna un void * que tiene el VALOR y su tipo
+											if + retorna lo que retorne expr + lo que retorne term
+											if - retorna lo que retorne expr - lo que retorne term
+											if term lo que retorne term
+
+										term debe retornar un void * que tiene el VALOR y su tipo
+											if * retorna lo que retorne term * lo que retorne factor
+											if / retorna lo que retorne term / lo que retorne factor
+											if factor retorna lo que retorne factor
+
+										factor debe retornar un void * que tiene el VALOR y su tipo
+											if expr retorna lo que le retorne expr 
+											if id -> retorna valor que tiene dentro de tabla de simbolos
+											if numint -> retorna numint 
+											if numfloat -> retorna numfloat
+
+expression retorna un BOOLEANO
+	en los tres casos:
+		compara tipos de ambas expresiones
+			si son distintos tipos, retorna excepcion de tipos distintos, finaliza ejecución
+		compara valores de ambas expresiones
+			retorna resultado de esa comparación

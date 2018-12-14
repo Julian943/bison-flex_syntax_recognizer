@@ -1,0 +1,20 @@
+program cuatro
+  x: float;
+  y: int;
+  z: float
+begin
+  x := 3.3;
+  y := 4;
+  while (x < y)
+    repeat
+      x := 4;
+      y := 3 + x * 2
+    until(x > 5);
+    y := x;
+    if (x < x + y)
+      x := x + y
+    endif;
+    x := y
+  endw
+end
+

@@ -1,0 +1,9 @@
+program seis
+  x : int;
+  y : int
+begin
+   read x;
+   read z;
+   print x * y
+end
+

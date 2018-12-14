@@ -1,0 +1,32 @@
+empieza con archivo.y y archivo.lex
+
+bison -d archivo.y -> genera archivo.tab.c , archivo.tab.h
+
+flex archivo.lex
+
+gcc lex.yy.c archivo.tab.c -ll
+
+
+bison -d -t Tarea6.y
+flex Tarea6.lex
+gcc lex.yy.c Tarea6.tab.c -ll
+
+a.out ../Tests/1.txt
+a.out ../Tests/2.txt
+a.out ../Tests/3.txt
+a.out ../Tests/4.txt
+a.out ../Tests/5.txt
+a.out ../Tests/6.txt
+a.out ../Tests/7.txt
+a.out ../Tests/oliart_1.txt
+a.out ../Tests/oliart_2.txt
+a.out ../Tests/oliart_3.txt
+a.out ../Tests/oliart_4.txt
+a.out ../Tests/oliart_5.txt
+a.out ../Tests/oliart_6.txt
+
+
+bison -d -t Tarea6.y
+flex Tarea6.lex
+gcc lex.yy.c Tarea6.tab.c -ll
+a.out ../Tests/7.txt

@@ -1,0 +1,16 @@
+program uno
+  x: int;
+  y: int
+begin
+  x := 3;
+  y := 4;
+  while (x < 5)
+    x := 5;
+    if (x < y)
+      repeat
+        x := 4
+      until(x > 5)
+    endif;
+    y := x
+  endw
+end
